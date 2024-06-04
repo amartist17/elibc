@@ -643,8 +643,7 @@
         </section>
         <!-- faq end -->
 
-       
-
+     
     
 
         <!-- contact start -->
@@ -712,7 +711,91 @@
             </div>
         </section>
         <!-- contact end -->
+        <section class="faq pt-120 pb-120">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <div class="xb-faq-content">
+                            <div class="sec-title mb-125">
+                                <h2 class="mb-30 wow skewIn">Get Your  <br> <span> CRS Score</span></h2>
+                                <p>Get accurate CRS Score <br>
+                                    </p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="xb-faq">
+                            <form id="crsForm" class="xb-item--form contact-from emailjs-form" action="#!">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="xb-item--field">
+                                            <!-- <span><img src="assets/img/icon/c_user.svg" alt=""></span> -->
+                                            <input id="name" name="name" type="text" placeholder="Name" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="xb-item--field">
+                                            <!-- <span><img src="assets/img/icon/c_mail.svg" alt=""></span> -->
+                                            <input id="age" name="age" type="number" placeholder="Age" required min="1" max="100">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="xb-item--field">
+                                            <span><img src="assets/img/icon/c_select.svg" alt=""></span>
+                                            <select id="education" name="education" class="nice-select" required>
+                                                <option selected value="">Eduction</option>
+                                                <option value="none">None / Less Than Secondary</option>
+                                                <option value="secondary">Secondary Diploma</option>
+                                                <option value="post-secondary">Post-secondary diploma</option>
+                                               
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="xb-item--field">
+                                            <!-- <span><img src="assets/img/icon/c_call.svg" alt=""></span> -->
+                                            <input name="tel" type="text" placeholder="Phone" required>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-12">
+                                        <button class="thm-btn" id="result" type="submit">Check Score</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>
 
+document.getElementById('crsForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Retrieve input values
+    const age = parseInt(document.getElementById('age').value);
+    const education = document.getElementById('education').value;
+
+    // Calculate CRS score (This is a simplified example, actual CRS calculation may involve more factors)
+    let crsScore = 0;
+    if (age >= 18 && age <= 35) {
+        crsScore += 100;
+    } else if (age >= 36 && age <= 45) {
+        crsScore += 50;
+    }
+    if (education === 'secondary') {
+        crsScore += 30;
+    } else if (education === 'post-secondary') {
+        crsScore += 60;
+    }
+
+    // Display result
+    document.getElementById('result').innerText = `Your CRS Score: ${crsScore}`;
+});
+
+        </script>
     </main>
 
     <!-- footer start -->
